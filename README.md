@@ -1,4 +1,4 @@
-# hiring apps
+# React developer take-home exercise
 
 ## Instructions
 
