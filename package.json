@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve hiring-app-01",
     "build": "nx build",
+    "lint": "nx lint",
     "test": "nx test"
   },
   "private": true,
