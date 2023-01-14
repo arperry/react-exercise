@@ -10,10 +10,11 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
   "files": [],
-  "include": [],
+  "include": ["./jest-setup.ts"],
   "references": [
     {
       "path": "./tsconfig.app.json"

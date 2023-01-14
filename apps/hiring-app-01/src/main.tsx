@@ -1,13 +1,23 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from 'src/store/index';
+import App from 'components/App';
 
-import App from './app/app';
+const rootElement = document.getElementById('root');
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+if (!rootElement) {
+  throw new Error('No root element exists.');
+}
+
+const root = ReactDOM.createRoot(rootElement);
 root.render(
   <StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter basename="/">
+        <App />
+      </BrowserRouter>
+    </Provider>
   </StrictMode>
 );

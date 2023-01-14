@@ -11,6 +11,7 @@ class Todos {
     const newTodo = new Todo({ title, duration });
     const { uuid } = newTodo;
     this._todos.set(uuid, newTodo);
+
     return newTodo;
   }
 
@@ -22,6 +23,8 @@ class Todos {
 
   public getTodo(uuid: string) {
     if (!this._todos.has(uuid)) {
+      console.log(this._todos);
+      console.log(uuid);
       throw new Error('Todo does not exist');
     } else {
       return this._todos.get(uuid);

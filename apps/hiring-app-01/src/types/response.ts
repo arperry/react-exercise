@@ -1,6 +1,6 @@
 type SuccessResponse<T> = {
   ok: true;
-  data: T;
+  data: T | T[];
 };
 
 type ErrorResponse = {
@@ -10,7 +10,7 @@ type ErrorResponse = {
 
 type Response<T> = SuccessResponse<T> | ErrorResponse;
 
-const isSuccessResponse = <T>(res: Response<T>): res is SuccessResponse<T> => {
+const isSuccessResponse = <T>(res: Response<T | T[]>): res is SuccessResponse<T> => {
   return res.ok;
 };
 
@@ -18,10 +18,4 @@ const isErrorResponse = <T>(res: Response<T>): res is ErrorResponse => {
   return !res.ok;
 };
 
-export {
-  Response,
-  isErrorResponse,
-  isSuccessResponse,
-  SuccessResponse,
-  ErrorResponse,
-};
+export { Response, isErrorResponse, isSuccessResponse, SuccessResponse, ErrorResponse };
