@@ -1,3 +1,9 @@
 {
+  "presets": [
+    // Automatic to define React
+    ["@babel/preset-react", { "runtime": "automatic" }],
+    "@babel/preset-typescript",
+    "@babel/env"
+  ],
   "babelrcRoots": ["*"]
 }

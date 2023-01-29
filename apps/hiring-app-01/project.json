@@ -17,8 +17,7 @@
         "polyfills": "apps/hiring-app-01/src/polyfills.ts",
         "tsConfig": "apps/hiring-app-01/tsconfig.app.json",
         "assets": [
-          "apps/hiring-app-01/src/favicon.ico",
-          "apps/hiring-app-01/src/assets"
+          "apps/hiring-app-01/src/favicon.ico"
         ],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"

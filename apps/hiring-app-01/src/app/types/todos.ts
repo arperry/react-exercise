@@ -1,4 +1,5 @@
-import { Todo } from './todo';
+import { AddTodo } from "../api";
+import { Todo } from "./todo";
 
 class Todos {
   private _todos: Map<string, Todo> = new Map();
@@ -7,8 +8,20 @@ class Todos {
     this._todos.clear();
   }
 
-  public addTodo(title: string, duration = 0) {
-    const newTodo = new Todo({ title, duration });
+  public addTodo({
+    color = "#FFF",
+    completed = false,
+    displaySequence = 1,
+    duration = 0,
+    title = "New Todo",
+  }: AddTodo) {
+    const newTodo = new Todo({
+      color,
+      completed,
+      displaySequence,
+      duration,
+      title,
+    });
     const { uuid } = newTodo;
     this._todos.set(uuid, newTodo);
     return newTodo;
@@ -16,13 +29,13 @@ class Todos {
 
   public deleteTodo(uuid: string) {
     if (!this._todos.delete(uuid)) {
-      throw new Error('Todo does not exist');
+      throw new Error("Todo does not exist");
     }
   }
 
   public getTodo(uuid: string) {
     if (!this._todos.has(uuid)) {
-      throw new Error('Todo does not exist');
+      throw new Error("Todo does not exist");
     } else {
       return this._todos.get(uuid);
     }
